@@ -1,0 +1,28 @@
+{
+  "entities": {
+    "UserProfile": {
+      "collection": "users",
+      "fields": {
+        "phoneNumber": { "type": "string", "description": "Phone number used during sign-in" },
+        "preferredLanguage": { "type": "string", "description": "Language code (hi, id, tl, en)" },
+        "country": { "type": "string", "description": "Country of operation (IN, ID, PH)" },
+        "occupation": { "type": "string", "description": "Gig / informal work type (e.g., delivery, ride-hail, domestic, vendor)" },
+        "createdAt": { "type": "string", "description": "ISO timestamp of user creation" },
+        "updatedAt": { "type": "string", "description": "ISO timestamp of last update" }
+      }
+    },
+    "Interaction": {
+      "collection": "users/{userId}/interactions",
+      "fields": {
+        "type": { "type": "string", "description": "Interaction mode: text, voice, document" },
+        "query": { "type": "string", "description": "User question or prompt transcript" },
+        "language": { "type": "string", "description": "Language detected or selected" },
+        "plainExplanation": { "type": "string", "description": "Simple explanation tailored for gig worker" },
+        "concreteNextStep": { "type": "string", "description": "Specific actionable next step" },
+        "cautionFlag": { "type": "string", "description": "Optional warning or cautionary note" },
+        "category": { "type": "string", "description": "Financial topic (deductions, loans, subsidies, pay, insurance)" },
+        "createdAt": { "type": "string", "description": "ISO timestamp" }
+      }
+    }
+  }
+}

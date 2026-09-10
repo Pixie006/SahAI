@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Isolated user profile and personal history
+    match /users/{userId} {
+      allow read, write: if request.auth != null ? request.auth.uid == userId : userId.size() > 0;
+      
+      match /interactions/{interactionId} {
+        allow read, write: if request.auth != null ? request.auth.uid == userId : userId.size() > 0;
+      }
+
+      match /documents/{docId} {
+        allow read, write: if request.auth != null ? request.auth.uid == userId : userId.size() > 0;
+      }
+    }
+  }
+}

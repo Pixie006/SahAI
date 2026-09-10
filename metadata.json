@@ -1,0 +1,9 @@
+{
+  "name": "SahAI",
+  "description": "Voice-first, multilingual financial literacy assistant for gig and informal workers in Asia Pacific (India, Indonesia, Philippines).",
+  "requestFramePermissions": [
+    "microphone",
+    "camera"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
